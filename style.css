@@ -6,10 +6,6 @@
     padding: 0;
 }
 
-
-
-
-
 html{
     scroll-behavior: smooth;
 }
@@ -339,8 +335,13 @@ div [type="submit"]:hover {
 }
 
 .profile h2{
-    font-size: 50px;
+    font-size: 40px;
+
+    @media screen and (max-width: 600px) {
+        font-size: 30px;
+    }
 }
+
 
 .row-home{
     background-color: purple;
@@ -369,30 +370,6 @@ div [type="submit"]:hover {
 
 }
 
-.product-planning{
-    height: 70rem;
-    width: 70rem;
-    min-width: 300px;
-    padding: 90px;
-}
-
-.sales-calculator{
-    height: 70rem;
-    width: 70rem;
-    margin-left: 68px;
-    min-width: 300px;
-}
-
-.sales-quota{
-    height: 70rem;
-    width: 70rem;
-    margin-left: 68px;
-    min-width: 300px;
-}
-
-.product-planning p{
-    max-width: 300px;
-}
 
 .float{
 	position:fixed;
@@ -420,14 +397,110 @@ div [type="submit"]:hover {
 }
 
 
-
 /* Product Planning */
 
 .product-planning{
     background-color: rgb(83, 83, 83);
     color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 50px;
 }
 
+.product-planning{
+    height: 70rem;
+    min-width: 300px;
+    padding: 90px;
+
+    @media screen and (max-width: 600px) {
+        padding: 30px;
+        border-radius: 25px;
+    }
+}
+
+.product-planning input{
+    border-radius: 7px;
+    border: 1px;
+    padding: 10px;
+    max-width: 300px;
+
+    @media screen and (max-width: 600px) {
+        width: 150px;
+    }
+}
+
+.product-planning input[type=text]:focus {
+    border: 0.5px #474347 solid;
+}
+
+.product-planning label{
+    font-size: 16px;
+}
+
+.product-planning button{
+    width: 100px;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+
+/* Sales Calculator */
+
+
+.calculator-wrapper{
+    min-width: 300px;
+}
+
+.sales-calculator{
+    height: 70rem;
+    min-width: 300px;
+    padding: 90px;
+    background-color: #ed23d9;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 50px;
+
+    @media screen and (max-width: 600px) {
+        padding: 30px;
+        border-radius: 25px;
+    }
+}
+
+
+
+/* Frame Home Page */
+
+
+.frameHome{
+    border: 2px rgba(161, 161, 161, 0.781) solid;
+    width: inherit;
+    margin: 50px;
+
+    @media screen and (max-width: 300px) {
+        margin: 2px;
+    }
+}
+
+
+/* Sales Quota */
+
+
+.sales-quota{
+    height: 70rem;
+    min-width: 300px;
+    background-color: #434343;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 50px;
+    color: white;
+    padding: 70px;
+
+    @media screen and (max-width: 600px) {
+        padding: 30px;
+        border-radius: 25px;
+    }
+}
 
 
 
