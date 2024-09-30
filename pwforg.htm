@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en"></html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,10 @@
     </script> 
     
     -->
+
+    <script>
+        
+    </script>
 </head>
 <body>
 
@@ -31,19 +35,21 @@
         </div>
     </div>
 
-    <main class="signup-form">
-        <div class="signup-section" id="signup-section">
+    <main class="forgot-pw">
+        <div class="pw-header">
+            <h3>Forgot Password?</h3>
+        </div>
+        <div class="frame" id="Frame"></div>
+        <div class="pwForg" id="pwForg">
             <div class="wrapper">
-                <h3>Sign up</h3>
-                <form action="index.htm" method="action">
-                    <input type="text" id="First Name" placeholder="First Name" required><br>
-                    <input type="text" id="Last Name" placeholder="Last Name" required><br>
-                    <input type="email" id="email" placeholder="Email" required><br>
-
-                    <input type="password"  id="password" minlength="8"  placeholder="Password" required>
-                    <a href="index.htm">Already have an account?</a>
-                    <input type="submit" value="Sign up" onclick="myFunction()" class="sign-btn" href="index.htm">
-                </form>
+                <p>Please enter your email or Business Name to help you find your Account</p>
+                <input type="text" required placeholder="Email or Business Name">
+                <span></span>
+                <div class="frame" id="Frame"></div>
+                <div>
+                    <button type="cancel" value="Cancel" class="cancel"><a href="index.htm">Cancel</a></button>
+                    <button type="submit" value="Find Account" onclick="myFunction3()" class="find-acc">Find Account</button>
+                </div>    
             </div>
         </div>
     </main>
