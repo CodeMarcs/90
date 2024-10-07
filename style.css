@@ -132,9 +132,11 @@ ul{
 }
 
 .login-form a:hover{
-    color: black;
+    color: rgb(240, 78, 216);
     text-decoration: underline;
 }
+
+
 
 
 /* About Us */
@@ -163,6 +165,39 @@ ul{
     margin-bottom: 245;
     margin-top: 178;
 }
+
+
+/* Home - Customer Service */
+
+
+.report-wrapper{
+    background: #b61f9db0;
+    padding: 30;
+    max-width: 400px;
+    border: 1px rgb(0, 0, 0) solid;
+    border-radius: 10px;
+    margin-top: 50px;
+    box-shadow: rgba(55, 55, 55, 0.534) 1px 5px 10px;
+}
+
+.report-form label{
+    margin-bottom: -10;
+    font-size: 17px;
+    font-weight: 300px;
+}
+
+
+.report-form span{
+    display: inline-block;
+    border: 2px solid rgba(0, 0, 0, 0);
+    min-width: 300px;
+    max-width: 400px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: -3;
+}
+
 
 
 
@@ -318,7 +353,9 @@ div [type="submit"]:hover {
 }
 
 
+
 /* Home page */
+
 
 
 .footer-home{
@@ -329,6 +366,7 @@ div [type="submit"]:hover {
     text-align: center;
     margin-top: auto;
 }
+
 
 .profile{
     padding: 100px 70px 400px;
@@ -345,11 +383,16 @@ div [type="submit"]:hover {
 
 .row-home{
     background-color: purple;
-}
+    overflow: hidden;
+}   
 
 .row-home li:hover{
     background-color: rgba(98, 1, 98, 0.712);
     text-shadow: #fff 3px 0 10px;
+}
+
+.row-home a{
+    color: white;
 }
 
 .header-home{
@@ -368,6 +411,11 @@ div [type="submit"]:hover {
     text-align: center;
     margin: -7px 0 5px;
 
+}
+
+.navright a{
+    float: right;
+    color: white;
 }
 
 
@@ -399,12 +447,12 @@ div [type="submit"]:hover {
 
 /* Product Planning */
 
-.product-planning{
-    background-color: rgb(83, 83, 83);
-    color: white;
-    margin-left: 20px;
-    margin-right: 20px;
-    border-radius: 50px;
+
+.product-planning-page{
+    padding: 90px; 
+    height: 70rem;
+    background-color: #ffffff;
+    color: black;
 }
 
 .product-planning{
@@ -447,23 +495,16 @@ div [type="submit"]:hover {
 /* Sales Calculator */
 
 
-.calculator-wrapper{
-    min-width: 300px;
-}
 
-.sales-calculator{
+.sales-calculator-page{
     height: 70rem;
     min-width: 300px;
     padding: 90px;
-    background-color: #ed23d9;
-    color: white;
-    margin-left: 20px;
-    margin-right: 20px;
-    border-radius: 50px;
+    background-color: #ee98e6;
+    color: #434343;
 
     @media screen and (max-width: 600px) {
         padding: 30px;
-        border-radius: 25px;
     }
 }
 
@@ -486,14 +527,11 @@ div [type="submit"]:hover {
 /* Sales Quota */
 
 
-.sales-quota{
+.sales-quota-page{
     height: 70rem;
     min-width: 300px;
-    background-color: #434343;
-    margin-left: 20px;
-    margin-right: 20px;
-    border-radius: 50px;
-    color: white;
+    background-color: #ffffff;
+    color: black;
     padding: 70px;
 
     @media screen and (max-width: 600px) {

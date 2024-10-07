@@ -6,7 +6,7 @@ function myFunction() {
 
 /* Login */
 function myFunction2() {
-    alert("Log in successful!")
+    alert("Successful Log in!")
 }
 
 
@@ -18,4 +18,11 @@ function myFunction3() {
     alert("Cant find Account or Business Name")
 }
 
+
+
+/* This is for Back button */
+
+function myFunction4() {
+    history.back()
+}
 
