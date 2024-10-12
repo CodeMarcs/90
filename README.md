@@ -13,3 +13,6 @@ This Digital Tool Contains and About:
 
 
 I am a student, 17 yrs old, currently learning HTML5, CSS, JS.
+Still on going development, databases is still not working and will be working on it.
+This is for study purpose only
+Grade 12 Student and Aspiring Full Stack Developer
