@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="x-icon" href="icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 </head>
 <body>
 
@@ -22,26 +23,64 @@
                 <li><a href="sales-calculator.htm" id="Sales-Calculator">Sales Calculator</a></li>
                 <li><a href="sales-quota.htm" id="Sales-Quota">Sales Quota</a></li>
                 <li><a href="about.htm" id="About">About</a></li>
+                <li><a href="index.htm" id="Logout">Log out</a></li>
+                <li><a href="customers-service copy.htm" class="help" id="Help"><i class="fa-solid fa-circle-info"></i></a></li>
             </ul>
         </div>
     </div>
 
-    <main class="sales-calculator-page">
-       <div class="sales" id="Sales">
-            <h2>Sales Calculator</h2>
-            <p>Sales Calculator - In this tool you can use this to calculate the sales of your income.</p>
-       </div>
+    <div class="scalc-content">
+        <h2></h2>
+        <p></p>
+    </div>
 
-    <a href="#header" class="float">
-        <i class="fa-solid fa-chevron-up"></i>
-    </a>
+    <div class="calc">
+        <div class="calc-wrapper">
+            <div id = "container">
+                <div id = "calculator">
+                    <div id = "result">
+                        <div id = "history">
+                            <p id = "history-value"></p>
+                        </div>
+                        <div id = "output">
+                            <p id = "output-value" style="margin-top: 0%; margin-bottom: 0%"></p>
+                        </div>
+                    </div>
+                        
+                    <div id = "keyboard">
+                        <button class = "operators" id = "clear">C</button>
+                        <button class = "operators" id = "backspace">CE</button>
+                        <button class = "operators" id = "%">%</button>
+                        <button class = "operators" id = "/">&#247</button> <!-- hex code for / -->
+                        <button class = "numbers" id = "7">7</button>
+                        <button class = "numbers" id = "8">8</button>
+                        <button class = "numbers" id = "9">9</button>
+                        <button class = "operators" id = "*">&times</button> <!-- hex code for * -->
+                        <button class = "numbers" id = "4">4</button>
+                        <button class = "numbers" id = "5">5</button>
+                        <button class = "numbers" id = "6">6</button>
+                        <button class = "operators" id = "-">-</button>
+                        <button class = "numbers" id = "1">1</button>
+                        <button class = "numbers" id = "2">2</button>
+                        <button class = "numbers" id = "3">3</button>
+                        <button class = "operators" id = "+">+</button>
+                        <button class = "empty" id = "empty"></button>
+                        <button class = "numbers" id = "0">0</button>
+                        <button class = "empty" id = "empty"></button>
+                        <button class = "operators" id = "=">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    </main>
+    <script src = "script.js"></script>
+    <script src="https://kit.fontawesome.com/7db1c8cd2d.js" crossorigin="anonymous"></script>
+
 
     <div class="footer-home">
         <p>&copy; All rights reserved 2024.</p>
     </div>
 
-    <script src="main.js"></script>
 </body>
 </html>

@@ -26,3 +26,7 @@ function myFunction4() {
     history.back()
 }
 
+function reportSubmit() {
+    alert("Submitted!")
+}
+

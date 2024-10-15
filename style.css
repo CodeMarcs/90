@@ -191,11 +191,25 @@ ul{
     display: inline-block;
     border: 2px solid rgba(0, 0, 0, 0);
     min-width: 300px;
-    max-width: 400px;
     background-color: white;
     padding: 10px;
     border-radius: 10px;
     margin-left: -3;
+}
+
+.report-form .r-btn{
+    padding: 8;
+    width: 90px;
+    border-radius: 8px;
+    border: 0.7px black solid;
+    background-color: #cb00b7;
+    color: white;
+}
+
+.report-form .r-btn:hover{
+    color: white;
+    background-color: #ee98e6;
+    border: 0.7px black solid;
 }
 
 
@@ -294,8 +308,6 @@ div [type="submit"]:hover {
 
 
 /* Forgot Password */
-
-
 
 
 
@@ -449,7 +461,6 @@ div [type="submit"]:hover {
 
 
 .product-planning-page{
-    padding: 90px; 
     height: 70rem;
     background-color: #ffffff;
     color: black;
@@ -492,6 +503,23 @@ div [type="submit"]:hover {
 }
 
 
+.calc-wrapper{
+    background-color: #ee98e6;
+    margin: 0px 10px;
+    padding: 100px;
+    padding-bottom: 300px;
+    border: 1px black solid;
+    border-radius: 10px;
+    margin-top: 90px;
+}
+
+.product-planning-page .content{
+    padding: 100px;
+    margin-bottom: -50;
+}
+
+
+
 /* Sales Calculator */
 
 
@@ -500,8 +528,7 @@ div [type="submit"]:hover {
     height: 70rem;
     min-width: 300px;
     padding: 90px;
-    background-color: #ee98e6;
-    color: #434343;
+    color: #000;
 
     @media screen and (max-width: 600px) {
         padding: 30px;
@@ -541,5 +568,195 @@ div [type="submit"]:hover {
 }
 
 
+/* Calculator - sales */
+
+.parent {
+    display: flex;
+    justify-content: space-evenly;
+} 
+ 
+
+#container {
+    /*width: 1000px; */
+    /*! float: center; */
+    width: 100%;
+    height: 100%;
+    margin: 20px auto auto auto;
+    padding : 5px;
+    margin-bottom: 20px;  
+}
+
+#calculator {
+    width: 37%;
+    height: 520px;
+    margin : auto;
+    border-style: solid;
+    border-width: 2px;
+    padding : 5px;
+    color : rgb(0, 0, 0);
+}
+
+@media (hover: none) and (pointer: coarse) and (orientation: portrait) {
+    #calculator {
+        width: 91%;
+        margin-left: 1.4%;
+        margin-right: 0.7%;
+        height: 620px;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) and (orientation: landscape){
+
+ #calculator {
+    height: 530px;
+    width: 94%;
+    margin-left: 1.4%;
+  }
+  
+ #header {
+    height: 29.833px;
+  }
+  
+ #header > h1:nth-child(1) {
+    height: 17px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  
+ #history-value {
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  
+ #result {
+    height: 80px;;
+  }
+  
+ #history {
+    padding-top: 5px;
+  }
+  
+ #keyboard {
+    height: 125px;
+  }
+  
+ #footer {
+    height: 26px;
+  }
+
+ #footer > h2:nth-child(1) {
+    height: 27px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  
+ #container {
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+  
+ #calculator {
+    margin-right: 0px;
+    margin-left: 15px;
+  }
+
+ #calculator {
+      margin-left: 0px;
+      width: auto;
+ }
+
+ #container {
+    width: auto;
+  }
+}
 
 
+#result {
+    width: 97%;
+    height: 25%;
+    margin : 4px auto auto auto;
+    border-style: solid;
+    border-width: 2px;
+    padding : 5px;
+    margin-top: 0.8%;
+    padding-left: 1%;
+    padding-right: 1%;
+    color : rgb(0, 0, 0);
+}
+
+#history {
+    margin-top: 4%;
+    height: 40%;
+    width: 100%;
+    text-align: right;
+    font-size: large;
+}
+
+#output {
+    
+    height: 60%;
+    width: 100%;
+    font-size: xx-large;
+    text-align: right;
+}
+
+#keyboard {
+    width: 98%;
+    height: 68%;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    border-style: solid;
+    border-width: 2px;
+    padding-top: 5px;
+    padding-right: 0.5%;
+    padding-left: 0.5%;
+    padding-bottom: 5px;
+    color : black;
+}
+
+.operators, .numbers , .empty {
+    width: 25%;
+    height: 20%;
+    float: left;
+    border-width: 0.5;
+    font-weight: bold;
+    
+}
+
+.operators {
+    color: #000;
+    background-color: #fff;
+    font-size: large;
+    font-weight: bold;
+}
+
+.numbers, .empty {
+    color : white;
+    background-color: #ff8df2;
+    font-size: large;
+    font-weight: bold;
+}
+
+.operators, .numbers {
+    cursor: pointer;
+}
+
+.operators:active, .numbers:active {
+    font-size: medium;
+}
+
+.operators:focus, .numbers:focus, .empty:focus {
+    outline: 0;
+}
+
+.operators:hover {
+    color : gray;
+    font-size: medium;
+}
+
+.numbers:hover {
+    color: gray;
+    font-size: medium;
+}
