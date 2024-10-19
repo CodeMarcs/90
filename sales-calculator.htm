@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
 </head>
-<body>
+<body id="sc-body">
 
     <div class="header-home" id="header">
         <h1>Empowering Entrepeneurs</h1>
@@ -30,46 +30,42 @@
     </div>
 
     <div class="scalc-content">
-        <h2></h2>
-        <p></p>
+        <h2>Sales Calcutor</h2>
+        <p>POKI</p>
     </div>
 
     <div class="calc">
-        <div class="calc-wrapper">
-            <div id = "container">
-                <div id = "calculator">
-                    <div id = "result">
-                        <div id = "history">
-                            <p id = "history-value"></p>
-                        </div>
-                        <div id = "output">
-                            <p id = "output-value" style="margin-top: 0%; margin-bottom: 0%"></p>
-                        </div>
-                    </div>
-                        
-                    <div id = "keyboard">
-                        <button class = "operators" id = "clear">C</button>
-                        <button class = "operators" id = "backspace">CE</button>
-                        <button class = "operators" id = "%">%</button>
-                        <button class = "operators" id = "/">&#247</button> <!-- hex code for / -->
-                        <button class = "numbers" id = "7">7</button>
-                        <button class = "numbers" id = "8">8</button>
-                        <button class = "numbers" id = "9">9</button>
-                        <button class = "operators" id = "*">&times</button> <!-- hex code for * -->
-                        <button class = "numbers" id = "4">4</button>
-                        <button class = "numbers" id = "5">5</button>
-                        <button class = "numbers" id = "6">6</button>
-                        <button class = "operators" id = "-">-</button>
-                        <button class = "numbers" id = "1">1</button>
-                        <button class = "numbers" id = "2">2</button>
-                        <button class = "numbers" id = "3">3</button>
-                        <button class = "operators" id = "+">+</button>
-                        <button class = "empty" id = "empty"></button>
-                        <button class = "numbers" id = "0">0</button>
-                        <button class = "empty" id = "empty"></button>
-                        <button class = "operators" id = "=">=</button>
-                    </div>
+        <div class="calc-wrapper" id="calc-wrapper">
+            <div class="calc-container">
+                <input type="text" class="display"/>
+
+                <div class="buttons">
+                    <button data-value="AC">AC</button>
+                    <button data-value="DEL">DEL</button>
+                    <button data-value="%">%</button>
+                    <button data-value="/">/</button>
+
+                    <button data-value="7">7</button>
+                    <button data-value="8">8</button>
+                    <button data-value="9">9</button>
+                    <button data-value="*">*</button>
+
+                    <button data-value="4">4</button>
+                    <button data-value="5">5</button>
+                    <button data-value="6">6</button>
+                    <button data-value="-">-</button>
+
+                    <button data-value="1">1</button>
+                    <button data-value="2">2</button>
+                    <button data-value="3">3</button>
+                    <button data-value="+">+</button>
+
+                    <button data-value="0">0</button>
+                    <button data-value="00">00</button>
+                    <button data-value=".">.</button>
+                    <button data-value="=">=</button>
                 </div>
+                
             </div>
         </div>
     </div>
