@@ -1,90 +1,69 @@
-function getHistory(){
-	return document.getElementById("history-value").innerText;
-}
+/*
 
-function printHistory(num){
-	document.getElementById("history-value").innerText=num;
-}
+const display = document.querySelector("display");
+const buttons = document.querySelectorAll("buttons");
+const specialChars = ["%", "*", "/", "-", "+", "="];
+let output = "";
 
-function getOutput(){
-	return document.getElementById("output-value").innerText;
-}
 
-function printOutput(num){
-	if(num==""){
-		document.getElementById("output-value").innerText=num;
+const calculate = (btnValue) => {
+	if (btnValue === "=" && btnValue !== "") {
+		output = eval(output.replace("%", "/100"));
+	} else if (btnValue === "AC") {
+		output = "";
+	} else if (btnValue === "DEL") {
+		output = output.toString().slice(0, -1);
+	} else {
+		if (output === "" && specialChars.includes(btnValue)) return;
+		output += btnValue;
 	}
-	else{
-		document.getElementById("output-value").innerText=getFormattedNumber(num);
-	}	
+	
 }
 
-// Adds with comma separated values
-function getFormattedNumber(num){
-	if(num=="-"){
-		return "";
-	}
-	var n = Number(num);
-	var value = n.toLocaleString("en");
-	return value;
-}
+// Event lister
+buttons.forEach((button) => {
+	// button click (Calculate)
+	button.addEventListener("click", (e) => calculate(e.target.dataset.value));
+})
 
-// Removes comma present in values
-function reverseNumberFormat(num){
-	return Number(num.replace(/,/g,''));
-}
+*/
 
-var operator = document.getElementsByClassName("operators");
-for(var i =0; i<operator.length; i++){
-	operator[i].addEventListener('click',function(){
-		if(this.id=="clear"){
-			printHistory("");
-			printOutput("");
-		}
-		else if(this.id=="backspace"){
-			var output=reverseNumberFormat(getOutput()).toString();
-            // If output has a value
-            if(output){        
-				output= output.substr(0,output.length-1);
-				printOutput(output);
-			}
-		}
-		else{
-			var output=getOutput();
-            var history=getHistory();
-            // Backspace for operator present at end of history
-			if(output == "" && history != ""){
-				if(isNaN(history[history.length-1])){
-					history= history.substr(0,history.length-1);
-				}
-			}
-			if(output != "" || history != ""){
-				output= output==""?output:reverseNumberFormat(output);
-				history=history+output;
-				if(this.id=="="){
-					var result=eval(history);
-					printOutput(result);
-					printHistory("");
-				}
-				else{
-					history=history+this.id;
-					printHistory(history);
-					printOutput("");
-				}
-			}
-		}
-		
-	});
-}
+  // Function that display value 
 
-var number = document.getElementsByClassName("numbers");
-for(var i =0; i<number.length; i++){
-	number[i].addEventListener('click',function(){
-		var output=reverseNumberFormat(getOutput());
-        // If output is a number [Nan - Not a number]
-        if(output!=NaN){ 
-			output=output+this.id;
-			printOutput(output);
-		}
-	});
-}
+  
+  function dis(val) { 
+	document.getElementById("result").value += val 
+} 
+
+function myFunction(event) { 
+	if (event.key == '0' || event.key == '1' 
+		|| event.key == '2' || event.key == '3' 
+		|| event.key == '4' || event.key == '5' 
+		|| event.key == '6' || event.key == '7' 
+		|| event.key == '8' || event.key == '9' 
+		|| event.key == '+' || event.key == '-' 
+		|| event.key == '*' || event.key == '/') 
+		document.getElementById("result").value += event.key; 
+} 
+
+var cal = document.getElementById("calcu"); 
+cal.onkeyup = function (event) { 
+	if (event.keyCode === 13) { 
+		console.log("Enter"); 
+		let x = document.getElementById("result").value 
+		console.log(x); 
+		solve(); 
+	} 
+} 
+
+// Function that evaluates the digit and return result 
+function solve() { 
+	let x = document.getElementById("result").value 
+	let y = math.evaluate(x) 
+	document.getElementById("result").value = y 
+} 
+
+// Function that clear the display 
+function clr() { 
+	document.getElementById("result").value = "" 
+} 

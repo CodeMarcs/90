@@ -517,36 +517,11 @@ div [type="submit"]:hover {
 
 .calc{
     height: 100vh;
+    max-width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #fff;
-}
-
-.calc-container{
-    position: relative;
-    max-width: 300px;
-    width: 100%;
-    border-radius: 12px;
-    padding: 10px 20px 20px;
-    background: #fff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-.buttons{
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.display{
-    height: 80px;
-    width: 100%;
-    margin-bottom: 10px;
-    font-size: 25px;
-    outline: none;
-    border: none;
-    text-align: right;
 }
 
 .sales-calculator-page{
@@ -561,13 +536,11 @@ div [type="submit"]:hover {
 }
 
 .calc-wrapper{
-    background-color: #ee98e6;
     margin: 0px 10px;
     padding: 10px;
     padding-bottom: 300px;
     border: 1px black solid;
     border-radius: 30px;
-    margin-top: 90px;
 
     @media screen and (max-width:400px) {
         display: flex;
@@ -579,10 +552,12 @@ div [type="submit"]:hover {
 }
 
 #calc-wrapper{
-    background-color: #ee98e6;
+    background-image: linear-gradient(to bottom right,#7b1871, #a032a3, #d431c4);
     width: auto;
     height: auto;
     margin-bottom: 100px;
+    max-width: 100vw;
+    display: block;
 }
 
 
@@ -616,3 +591,5 @@ div [type="submit"]:hover {
         border-radius: 25px;
     }
 }
+
+
