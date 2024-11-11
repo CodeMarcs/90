@@ -1,69 +1,100 @@
-/*
+// script.js
 
-const display = document.querySelector("display");
-const buttons = document.querySelectorAll("buttons");
-const specialChars = ["%", "*", "/", "-", "+", "="];
-let output = "";
+let currentInput = '';  // To store the current input from the user
+let operator = '';      // To store the current operator
+let previousInput = ''; // To store the previous number before an operator is applied
 
+// History array to store the last 5 results
+let history = [];
 
-const calculate = (btnValue) => {
-	if (btnValue === "=" && btnValue !== "") {
-		output = eval(output.replace("%", "/100"));
-	} else if (btnValue === "AC") {
-		output = "";
-	} else if (btnValue === "DEL") {
-		output = output.toString().slice(0, -1);
-	} else {
-		if (output === "" && specialChars.includes(btnValue)) return;
-		output += btnValue;
-	}
-	
+// Function to append a number to the display
+function appendNumber(number) {
+    currentInput += number;
+    updateDisplay(currentInput);
 }
 
-// Event lister
-buttons.forEach((button) => {
-	// button click (Calculate)
-	button.addEventListener("click", (e) => calculate(e.target.dataset.value));
-})
+// Function to append an operator
+function appendOperator(op) {
+    if (currentInput === '') return; // Prevent appending operator if no number is entered
+    previousInput = currentInput;
+    currentInput = '';
+    operator = op;
+    updateDisplay(operator);
+}
 
-*/
+// Function to clear the display
+function clearDisplay() {
+    currentInput = '';
+    previousInput = '';
+    operator = '';
+    updateDisplay('');
+}
 
-  // Function that display value 
+// Function to calculate the result
+function calculateResult() {
+    if (previousInput === '' || currentInput === '') return; // Prevent calculation if inputs are missing
 
-  
-  function dis(val) { 
-	document.getElementById("result").value += val 
-} 
+    let result;
+    const prev = parseFloat(previousInput);
+    const current = parseFloat(currentInput);
 
-function myFunction(event) { 
-	if (event.key == '0' || event.key == '1' 
-		|| event.key == '2' || event.key == '3' 
-		|| event.key == '4' || event.key == '5' 
-		|| event.key == '6' || event.key == '7' 
-		|| event.key == '8' || event.key == '9' 
-		|| event.key == '+' || event.key == '-' 
-		|| event.key == '*' || event.key == '/') 
-		document.getElementById("result").value += event.key; 
-} 
+    switch (operator) {
+        case '+':
+            result = prev + current;
+            break;
+        case '-':
+            result = prev - current;
+            break;
+        case '*':
+            result = prev * current;
+            break;
+        case '/':
+            if (current === 0) {
+                result = 'Error';  // Avoid division by zero
+            } else {
+                result = prev / current;
+            }
+            break;
+        default:
+            return;
+    }
 
-var cal = document.getElementById("calcu"); 
-cal.onkeyup = function (event) { 
-	if (event.keyCode === 13) { 
-		console.log("Enter"); 
-		let x = document.getElementById("result").value 
-		console.log(x); 
-		solve(); 
-	} 
-} 
+    // Store the result in history and update the display
+    storeHistory(`${previousInput} ${operator} ${currentInput} = ${result}`);
+    currentInput = result.toString();
+    operator = '';
+    previousInput = '';
+    updateDisplay(currentInput);
+}
 
-// Function that evaluates the digit and return result 
-function solve() { 
-	let x = document.getElementById("result").value 
-	let y = math.evaluate(x) 
-	document.getElementById("result").value = y 
-} 
+// Function to update the display of the calculator
+function updateDisplay(value) {
+    document.getElementById('display').value = value;
+}
 
-// Function that clear the display 
-function clr() { 
-	document.getElementById("result").value = "" 
-} 
+// Function to store calculation history (only the last 5 results)
+function storeHistory(entry) {
+    // Add new entry at the start of the history array
+    history.unshift(entry);
+
+    // Keep the history array to a maximum of 5 entries
+    if (history.length > 5) {
+        history.pop();
+    }
+
+    // Update the history list display
+    updateHistory();
+}
+
+// Function to update the history display
+function updateHistory() {
+    const historyList = document.getElementById('history-list');
+    historyList.innerHTML = ''; // Clear current history list
+
+    // Populate the history list with entries
+    history.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        historyList.appendChild(li);
+    });
+}
