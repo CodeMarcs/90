@@ -31,12 +31,29 @@
        <div class="product" id="Product">
             <div class="content">
                 <h2>Product Planning</h2>
-            <p>Product Planning tool - This is where you can plan all of your product you want to sell</p>
+            <p>Product Planning tool - This is where you can plan all of your product you want to sell. You can also generate your business name ideas in this section.</p>
             </div>
+            
+            <div class="planning">
+                <div class="generator-wrapper">
+                    <h1>Creative Business Name Generator</h1>
+                    <p>Generate unique business names based on your ideas!</p>
 
-            <div class="calc-wrapper">
-                <div class="calculator">
+                        <section class="input-section">
+                            <label for="businessIdea">Your Business Idea:</label>
+                            <textarea id="businessIdea" placeholder="Describe your business idea (e.g., tech, wellness, fashion)" rows="4"></textarea>
+                        
+                            <label for="industry">Industry:</label>
+                            <input type="text" id="industry" placeholder="e.g. Technology, Wellness, Fashion">
+                        
+                            <button id="generateBtn">Generate Business Names</button>
+                        </section>
 
+                        <section class="results-section">
+                            <h2>Suggested Names</h2>
+                            <ul id="nameList"></ul>
+                        </section>
+                    <script src="app.js"></script>
                 </div>
             </div>
        </div>

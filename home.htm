@@ -34,18 +34,79 @@
             <p>This is your personal Digitool | Digital Tool</p>
        </div>
 
-       <div class="overlay">
+       <div class="slideshow-container">
         <div class="slideshow">
-            <div class="mySlides">
-                <h2>Henry Sy. Sr</h2>
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <div class="slides">
+              <div class="slide">
+                <img src="/img/henry-sy.jpeg" alt="Henry Sy Sr.">
+                <div class="overlay"></div>
+                <div class="text-overlay">
+                  <h2 class="quote-title">Henry Sy Sr.</h2>
+                  <p class="quote-text">"There is no substitute for hard work. There is no such thing as an overnight success or easy money.
+                    "</p>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="/img/john-gokongwei.jpg" alt="John Gokongwei">
+                <div class="overlay"></div>
+                <div class="text-overlay">
+                  <h2 class="quote-title">John Gokongwei</h2>
+                  <p class="quote-text">"Love your work, Work hard for it."</p>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="/img/jeff-bezos.jpg" alt="Jeff Bezos">
+                <div class="overlay"></div>
+                <div class="text-overlay">
+                  <h2 class="quote-title">Jeff Bezos</h2>
+                  <p class="quote-text">"I believe you have to be willing to be misunderstood if you're going to innovate."</p>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="/img/elon-musk.jpg" alt="Elon Musk">
+                <div class="overlay"></div>
+                <div class="text-overlay">
+                  <h2 class="quote-title">Elon Musk</h2>
+                  <p class="quote-text">"When something is important enough, you do it even if the odds are not in your favor."</p>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="/img/tony-tan-caktiong.jpeg" alt="Tony Tan Caktiong">
+                <div class="overlay"></div>
+                <div class="text-overlay">
+                  <h2 class="quote-title">Tony Tan Caktiong</h2>
+                  <p class="quote-text">"Dreams are free, so why limit what you are aspiring for? But dreaming is not enough. One needs to put in enough energy and input."</p>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="/img/mark-zuckerberg.jpg" alt="Mark Zuckerberg">
+                <div class="overlay"></div>
+                <div class="text-overlay">
+                  <h2 class="quote-title">Mark Zuckerberg</h2>
+                  <p class="quote-text">"Figuring out what the next big trend tells us what should we focus on.
+                    "</p>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="/img/steve-jobs.jpeg" alt="Steve Jobs">
+                <div class="overlay"></div>
+                <div class="text-overlay">
+                  <h2 class="quote-title">Steve Jobs</h2>
+                  <p class="quote-text">"The only way to do great work is to love what you do."</p>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="/img/bill-gates.jpeg" alt="Bill Gates">
+                <div class="overlay"></div>
+                <div class="text-overlay">
+                  <h2 class="quote-title">Bill Gates</h2>
+                  <p class="quote-text">"We all need people who will give us feedback. That's how we improve."</p>
+                </div>
+              </div>
             </div>
-            <span>Quote</span>
-            <div class="mySlides"></div>
-            <div class="mySlides"></div>
-            <div class="mySlides"></div>
-            
-            
-        </div>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+          </div>
        </div>
 
     <a href="#header" class="float">
@@ -58,6 +119,7 @@
         <p>&copy; All rights reserved 2024.</p>
     </div>
 
+    <script src="slideshow.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

@@ -377,17 +377,19 @@ div [type="submit"]:hover {
     pointer-events: none;
     padding: 15; 
     text-align: center;
-    margin-top: auto;
+    margin-top: 0;
 }
 
 
 .profile{
     padding-left: 20px;
+    padding-bottom: 40px;
 }
 
 .profile h2{
     font-size: 40px;
     padding-top: 70px;
+
 
     @media screen and (max-width: 600px) {
         font-size: 30px;
@@ -436,7 +438,6 @@ div [type="submit"]:hover {
     color: white;
 }
 
-
 .float{
 	position:fixed;
 	width: 60px;
@@ -462,60 +463,145 @@ div [type="submit"]:hover {
     color: white;
 }
 
-
 /* Home page, slideshow */
 
-.slideshow{
-    border: 1px solid #000;
-    background-image: url(/img/entrep1.png);
-    height: 30rem;
-    width: 50rem;
-    margin-top: 50px;
-    border-radius: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0px 0px 10px #5a5a5ada;
-    align-items: center;
-    justify-content: center;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    font-size: 40px;
-
-    @media screen and (max-width: 400px) {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-}
-
-.slideshow h2{
-    color: #ffffff;
-    text-shadow: #000 10px 10px 10px;
-}
-
-.overlay{
+.slideshow-container{
     border: 1px #000 solid;
     margin: 20px;
     border-radius: 20px;
+    box-shadow: 0px 0px 10px #000;
+
+    @media screen and (max-width: 400px) {
+        height: 100vh;
+        margin: 5px;
+    }
 }
 
-.slideshow span{
-    color: #fff;
-    text-shadow: 10px 10px 10px #000;
-    font-size: 35px;
+
+
+.slideshow {
+    width: 100%;
+    max-width: 100%; 
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto; /* Center the slideshow */
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
 }
-
-
-
-
+  
+  /* Container for all the slides */
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth transition when changing slides */
+    height: 100%;
+    position: relative;
+}
+  
+  /* Each individual slide */
+  .slide {
+    width: 100%; /* Ensure only one slide is shown at a time */
+    height: 100%; /* Fill the entire height */
+    position: relative;
+    display: none; /* Initially hide all slides */
+}
+  
+  /* Show only the active slide */
+  .slide.active {
+    display: block; /* Show the active slide */
+}
+  
+  /* Ensures images cover the entire slide container */
+  .slide img {
+    width: 100%; /* Image takes up the full width */
+    height: 100%; /* Image takes up the full height */
+    object-fit: cover; /* Ensure the image covers the slide area without distortion */
+    object-position: center center; /* Center the image to ensure the key part is visible */
+    display: block;
+}
+  
+  /* Dark overlay to help with text visibility */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Transparent dark background */
+    z-index: 1; /* Overlay sits above the image but below the text */
+}
+  
+  /* Text container styling */
+.text-overlay {
+    position: absolute;
+    top: 50%; /* Vertically center text */
+    left: 50%; /* Horizontally center text */
+    transform: translate(-50%, -50%); /* Truly center the text */
+    width: 80%; /* Optional width for text container */
+    text-align: center; /* Center-align the text */
+    color: white;
+    z-index: 2; /* Text sits above the overlay */
+}
+  
+  /* Title styling */
+  .quote-title {
+    font-size: 36px; /* Large font size for the title */
+    font-weight: bold;
+    margin-bottom: 20px; /* Space between title and quote */
+}
+  
+  /* Quote styling */
+  .quote-text {
+    font-size: 20px; /* Smaller font for the quote */
+    font-style: italic;
+    line-height: 1.5;
+}
+  
+  /* Navigation buttons */
+.slideshow button {
+    position: absolute;
+    top: 50%;
+    background: rgb(189, 54, 189);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transform: translateY(-50%);
+}
+  
+.prev {
+    left: 10px;
+}
+  
+.next {
+    right: 10px;
+}
+  
+.slideshow button:hover {
+    background: rgba(203, 58, 203, 0.493);
+}
+  
+  /* Media Query for responsiveness */
+@media (max-width: 800px) {
+    .slideshow {
+      max-width: 100%;
+    }
+  
+    .quote-title {
+      font-size: 28px;
+    }
+  
+    .quote-text {
+      font-size: 16px;
+    }
+}
+  
 
 
 
 /* Product Planning */
-
 
 .product-planning-page{
     height: 70rem;
@@ -534,30 +620,119 @@ div [type="submit"]:hover {
     }
 }
 
-.product-planning input{
-    border-radius: 7px;
-    border: 1px;
-    padding: 10px;
-    max-width: 300px;
 
-    @media screen and (max-width: 600px) {
-        width: 150px;
+
+/* Name Generator */
+
+
+.generator-wrapper{
+    box-sizing: border-box;
+    border: 1px #000 solid;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    box-shadow: 0px 4px 8px #000;
+
+    @media screen and (max-width: 400px) {
+        margin: 3px;
+        margin-bottom: 400px;
     }
+
+
 }
 
-.product-planning input[type=text]:focus {
-    border: 0.5px #474347 solid;
+.planning{
+    .input-section{
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 600px;
+    }
+
+    h1{
+        font-size: 2.5rem;
+        padding-top: 30px;
+        color: #000000;
+    }
+
+    p{
+        font-size: 1rem;
+        color: #555;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    textarea, input{
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    button{
+        padding: 12px 24px;
+        background-color: #ff39fc;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover{
+        background-color: #a6189d;
+    }
+
+    .results-section{
+        max-width: 600px;
+        width: 100%;
+    }
+
+    h2{
+        margin-bottom: 10px;
+    }  
+    
+    ul{
+        list-style: none;
+        padding: 0;
+    }
+
+    li{
+        background-color: #fff;
+        padding: 12px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+
+    @media (max-width: 768px){
+        .input-section {
+          padding: 15px;
+        }
+      
+        button {
+          width: 100%;
+        }
+    }
+
 }
 
-.product-planning label{
-    font-size: 16px;
-}
 
-.product-planning button{
-    width: 100px;
-    padding: 10px;
-    border-radius: 7px;
-}
+
+
+/* Product Planning Page Content */
 
 
 
@@ -607,6 +782,7 @@ div [type="submit"]:hover {
 
 .calc-wrapper h1{
     color: white;
+    padding-left: 50px;
 }
 
 .scalc-content{
@@ -736,17 +912,6 @@ button:active {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* Frame Home Page */
 
 
@@ -790,12 +955,3 @@ button:active {
 
 
 /* Sales Table - Quota */
-
-
-
-
-
-
-/*  */
-/*  */
-
