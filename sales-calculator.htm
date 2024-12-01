@@ -5,6 +5,8 @@
     <title>prototype</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="x-icon" href="icon.png">
+    <link rel="stylesheet" href="style-chart.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body id="sc-body">
@@ -27,13 +29,13 @@
 <main>
     <div class="scalc-content">
         <h2>Sales Calcutor</h2>
-        <p>Test Website</p>
+        <p>In this section of our Website we provide the Website owner or The Business Owner the Calculator and Charts for their Sales.</p>
     </div>
     <div class="large-wrapper">
         <div class="calc">
             <div class="calc-wrapper" id="calc-wrapper">
-                <h1>Sales Calculator</h1>
                     <div class="calculator">
+                        <h1 style="color:#000; font-size: 20px; padding-left: 60px">Sales Calculator</h1>
                         <input type="text" id="display" disabled>
                         <div class="buttons">
                             <button class="btn" onclick="appendNumber(7)">7</button>
@@ -61,19 +63,23 @@
                             <ul id="history-list"></ul>
                         </div>
                     </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="container">
-        <div class="content-wrapper" id="c-wrapper">
-            <h2>Calculations</h2>   
+                        <div class="chart">
+                            <div class="sales-chart">
+                                <div id="chart">
+                                    <div id="chartDiv"></div>
+                                    
+                                </div>
+                            </div>
+                    </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    
 </main>
     <div class="footer-home">
         <p>&copy; All rights reserved 2024.</p>
     </div>
 </body>
+<script src="chart.js"></script>
+<script src="script.js"></script>
 </html>

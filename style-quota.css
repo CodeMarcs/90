@@ -1,0 +1,108 @@
+/* Basic Styles */
+.sales-quota-page {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Main Wrapper for both tables and charts */
+.main-wrapper {
+  background-color: #eee;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Table and Chart Container */
+.table-chart-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: block;
+  margin: 10px auto;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f8f8f8;
+}
+
+td {
+  background-color: #fafafa;
+}
+
+/* Centering the Chart */
+.chart-container {
+  display: flex;
+  justify-content: center;   /* Horizontally center the chart */
+  align-items: center;       /* Vertically center the chart */
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .container {
+      flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  h2 {
+      font-size: 18px;
+  }
+  table, button {
+      font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+      padding: 10px;
+  }
+}

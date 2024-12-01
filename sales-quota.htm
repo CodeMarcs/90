@@ -5,38 +5,10 @@
     <title>prototype</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="x-icon" href="icon.png">
+    <link rel="stylesheet" href="style-quota.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            font-family: Helvetica;
-        }
-        
-        table{
-            border: 2px solid #000000 ;
-            width: 400px;
-            text-align: center;
-            flex-direction: column;
-            border-collapse: collapse;
-        }
-        
-        th, td{
-            border: 2px solid #000000 ;
-            width: 200px;
-            padding: 20px;
-        }
-        
-        .row{
-            background-color: rgb(255, 112, 243);
-        }
-        
-        th{
-            background-color: rgb(115, 0, 98);
-            color: white;
-        }
-    </style>
 </head>
 <body>
 
@@ -57,46 +29,94 @@
             </ul>
         </div>
     </div>
+
+    <div class="sales" id="Sales">
+        <h1>Sale Quota</h1>
+        <p>Sales Quota - Here you can find your daily/weekly quota in this page.</p>
+   </div>
     <main class="sales-quota-page">
-       <div class="sales" id="Sales">
-            <h2>Sale Quota</h2>
-            <p>Sales Quota - Here you can find your daily/weekly quota in this page.</p>
-       </div>
-       <div class="quota">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th> sample</th>
-                    <th> to do</th>
-                    <th> how it works</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td scope="row" class="row">sample 1</td>
-                    <td> learn how it works</td>
-                    <td> per tr tag, contain a row - full line of table</td>
-                </tr>
-                <tr>
-                    <td scope="row" class="row">sample 2</td>
-                    <td>double trouble</td>
-                    <td>double trouble</td>
-                </tr>
-                <tr>
-                    <td scope="row" class="row">sample 1</td>
-                    <td> learn how it works</td>
-                    <td> per tr tag, contain a row - full line of table</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <a href="#header" class="float">
-        <i class="fa-solid fa-chevron-up"></i>
-    </a>
+        <div class="main-wrapper">
+            <div class="table-chart-container" id="monthly-sales-container">
+                <h2>Monthly Sales Quota</h2>
+                <button class="add-row-btn" onclick="addRow('monthlySalesTable')">Add Row</button>
+                <table id="monthlySalesTable">
+                    <thead>
+                        <tr>
+                            <th contenteditable="true" id="th-region">Region</th>
+                            <th contenteditable="true" id="th-sales">Sales</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td contenteditable="true" id="region-north" oninput="updateChart()">North</td>
+                            <td contenteditable="true" id="north-sales" oninput="updateChart()">120</td>
+                            <td><button onclick="deleteRow(this, 'monthlySalesTable')">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td contenteditable="true" id="region-south" oninput="updateChart()">South</td>
+                            <td contenteditable="true" id="south-sales" oninput="updateChart()">150</td>
+                            <td><button onclick="deleteRow(this, 'monthlySalesTable')">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td contenteditable="true" id="region-east" oninput="updateChart()">East</td>
+                            <td contenteditable="true" id="east-sales" oninput="updateChart()">200</td>
+                            <td><button onclick="deleteRow(this, 'monthlySalesTable')">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td contenteditable="true" id="region-west" oninput="updateChart()">West</td>
+                            <td contenteditable="true" id="west-sales" oninput="updateChart()">180</td>
+                            <td><button onclick="deleteRow(this, 'monthlySalesTable')">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="chart-container">
+                    <canvas id="monthlySalesChart"></canvas>
+                </div>
+            </div>
+            <div class="table-chart-container" id="daily-sales-container">
+                <h2>Daily Sales Quota</h2>
+                <button class="add-row-btn" onclick="addRow('dailySalesTable')">Add Row</button>
+                <table id="dailySalesTable">
+                    <thead>
+                        <tr>
+                            <th contenteditable="true" id="th-region-daily">Region</th>
+                            <th contenteditable="true" id="th-sales-daily">Sales</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td contenteditable="true" id="region-north-daily" oninput="updateChartDaily()">North</td>
+                            <td contenteditable="true" id="north-sales-daily" oninput="updateChartDaily()">120</td>
+                            <td><button onclick="deleteRow(this, 'dailySalesTable')">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td contenteditable="true" id="region-south-daily" oninput="updateChartDaily()">South</td>
+                            <td contenteditable="true" id="south-sales-daily" oninput="updateChartDaily()">150</td>
+                            <td><button onclick="deleteRow(this, 'dailySalesTable')">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td contenteditable="true" id="region-east-daily" oninput="updateChartDaily()">East</td>
+                            <td contenteditable="true" id="east-sales-daily" oninput="updateChartDaily()">200</td>
+                            <td><button onclick="deleteRow(this, 'dailySalesTable')">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td contenteditable="true" id="region-west-daily" oninput="updateChartDaily()">West</td>
+                            <td contenteditable="true" id="west-sales-daily" oninput="updateChartDaily()">180</td>
+                            <td><button onclick="deleteRow(this, 'dailySalesTable')">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="chart-container">
+                    <canvas id="dailySalesChart"></canvas>
+                </div>
+            </div>
+        </div>
     </main>
-    <div class="footer-home">
-        <p>&copy; All rights reserved 2024.</p>
-    </div>
+  </body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="main.js"></script>
-</body>
+    <script src="quota-table.js"></script>
 </html>
+

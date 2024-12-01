@@ -1,0 +1,82 @@
+.sales-chart{
+    padding: 20px;
+    margin: 20px;
+    border: none;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    height: 100%;
+    width: 1000px;
+
+   @media screen and (max-width: 400px) {
+        width: auto;
+   }
+}
+
+#chart{
+    display: flex;
+    flex: 1 2 2;
+}
+
+canvas {
+    width: 100% !important;  /* Make canvas width responsive */
+    height: 400px !important; /* Fixed height for the chart */
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.chart-container {
+    width: 100%; /* Full width of the screen */
+    max-width: 1200px; /* Max width to prevent stretching on larger screens */
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 60px;
+
+    @media screen and (max-width: 400px) {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .chart-container {
+        width: 100%; /* Make the container take full width on smaller screens */
+        max-width: 400px; /* Set max-width to 400px on very small screens */
+        padding: 0 10px; /* Add some padding to prevent touching the edges */
+    }
+
+    canvas {
+        width: 100% !important;  /* Ensure canvas width remains responsive */
+        height: 300px !important; /* Decrease the height for very small screens */
+    }
+
+    h2 {
+        font-size: 16px; /* Reduce title size for smaller screens */
+    }
+
+    canvas{
+        height: 240px !important;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+    .chart-container {
+        width: 100%;
+        max-width: 400px;
+        padding: 0 10px;
+    }
+}
+
+.chart{
+    background-color: #e7e7e7;
+    padding: 5px;
+    border-radius: 20px;
+    margin: 10px;
+
+    @media screen and (max-width: 400px) {
+        padding: 0px;
+        margin: 2px;
+        background: #00000000;
+    }
+
+}
